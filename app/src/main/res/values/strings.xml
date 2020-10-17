@@ -10,6 +10,10 @@
     <string name="daterelease">Date Release</string>
     <string name="category">Category</string>
     <string name="release_date">Release: %s</string>
+    <string name="episodes">Episodes</string>
+    <string name="number_episodes">%s Episodes</string>
+    <string name="season">season</string>
+    <string name="last_season">Last Season:%s</string>
 
 
 </resources>

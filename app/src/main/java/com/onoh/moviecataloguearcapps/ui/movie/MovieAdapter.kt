@@ -10,7 +10,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.onoh.moviecataloguearcapps.R
 import com.onoh.moviecataloguearcapps.data.MovieEntity
 import com.onoh.moviecataloguearcapps.ui.detail.DetailMovieActivity
-import kotlinx.android.synthetic.main.items_list.view.*
+import kotlinx.android.synthetic.main.items_movies.view.*
 import java.util.ArrayList
 
 class MovieAdapter: RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
@@ -24,7 +24,7 @@ class MovieAdapter: RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.items_list, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.items_movies, parent, false)
         return MovieViewHolder(view)
     }
 

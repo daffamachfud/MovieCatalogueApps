@@ -1,6 +1,7 @@
 package com.onoh.moviecataloguearcapps.utils
 
 import com.onoh.moviecataloguearcapps.data.MovieEntity
+import com.onoh.moviecataloguearcapps.data.TvShowEntity
 
 object DataDummy {
     fun generateDummyMovies():List<MovieEntity>{
@@ -107,5 +108,121 @@ object DataDummy {
         )
 
         return movies
+    }
+
+    fun generateDummyTvShows():List<TvShowEntity>{
+        val tvShows = ArrayList<TvShowEntity>()
+
+        tvShows.add(
+            TvShowEntity(
+            "tv1",
+            "Game Of Thrones",
+            "Sci-Fi&Fantasy,Drama,Action &Adventure,Mystery",
+            "Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. All while a very ancient evil awakens in the farthest north. Amidst the war, a neglected military order of misfits, the Night's Watch, is all that stands between the realms of men and icy horrors beyond.",
+                "6",
+                "8",
+                "https://image.tmdb.org/t/p/w600_and_h900_bestv2/u3bZgnGQ9T01sWNhyveQz0wH0Hl.jpg")
+        )
+
+        tvShows.add(
+            TvShowEntity(
+                "tv2",
+                "Peaky Blinders",
+                "Drama,Crime",
+                "A gangster family epic set in 1919 Birmingham, England and centered on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby, who means to move up in the world.",
+                "6",
+                "5",
+                "https://image.tmdb.org/t/p/w600_and_h900_bestv2/6PX0r5TRRU5y0jZ70y1OtbLYmoD.jpg")
+        )
+
+        tvShows.add(
+            TvShowEntity(
+                "tv3",
+                "The Simpsons",
+                "Animation,Comedy,Family,Drama",
+                "Set in Springfield, the average American town, the show focuses on the antics and everyday adventures of the Simpson family; Homer, Marge, Bart, Lisa and Maggie, as well as a virtual cast of thousands. Since the beginning, the series has been a pop culture icon, attracting hundreds of celebrities to guest star. The show has also made name for itself in its fearless satirical take on politics, media and American life in general.",
+                "4",
+                "32",
+                "https://image.tmdb.org/t/p/w600_and_h900_bestv2/qcr9bBY6MVeLzriKCmJOv1562uY.jpg")
+        )
+
+        tvShows.add(
+            TvShowEntity(
+                "tv4",
+                "Dragon Ball Z",
+                "Sci&Fi,Animation,Comedy",
+                "Five years have passed since the fight with Piccolo Jr., and Goku now has a son, Gohan. The peace is interrupted when an alien named Raditz arrives on Earth in a spacecraft and tracks down Goku, revealing to him that that they are members of a near-extinct warrior race called the Saiyans.",
+                "38",
+                "1",
+                "https://image.tmdb.org/t/p/w600_and_h900_bestv2/f2zhRLqwRLrKhEMeIM7Z5buJFo3.jpg")
+        )
+
+        tvShows.add(
+            TvShowEntity(
+                "tv5",
+                "The Walking Dead",
+                "Action,Drama,Sci-Fi&Fantasy",
+                "Sheriff's deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies. He sets out to find his family and encounters many other survivors along the way.",
+                "22",
+                "10",
+                "https://image.tmdb.org/t/p/w600_and_h900_bestv2/qgjP2OrrX9gc6M270xdPnEmE9tC.jpg")
+        )
+
+        tvShows.add(
+            TvShowEntity(
+                "tv6",
+                "The Flash",
+                "Drama,Sci-Fi&Fantasy",
+                "After a particle accelerator causes a freak storm, CSI Investigator Barry Allen is struck by lightning and falls into a coma. Months later he awakens with the power of super speed, granting him the ability to move through Central City like an unseen guardian angel. Though initially excited by his newfound powers, Barry is shocked to discover he is not the only \"meta-human\" who was created in the wake of the accelerator explosion -- and not everyone is using their new powers for good. Barry partners with S.T.A.R. Labs and dedicates his life to protect the innocent. For now, only a few close friends and associates know that Barry is literally the fastest man alive, but it won't be long before the world learns what Barry Allen has become...The Flash.",
+                "19",
+                "6",
+                "https://image.tmdb.org/t/p/w600_and_h900_bestv2/wHa6KOJAoNTFLFtp7wguUJKSnju.jpg")
+        )
+
+        tvShows.add(
+            TvShowEntity(
+                "tv7",
+                "Money Heist",
+                "Drama,Crime",
+                "To carry out the biggest heist in history, a mysterious man called The Professor recruits a band of eight robbers who have a single characteristic: none of them has anything to lose. Five months of seclusion - memorizing every step, every detail, every probability - culminate in eleven days locked up in the National Coinage and Stamp Factory of Spain, surrounded by police forces and with dozens of hostages in their power, to find out whether their suicide wager will lead to everything or nothing.",
+                "16",
+                "2",
+                "https://image.tmdb.org/t/p/w600_and_h900_bestv2/MoEKaPFHABtA1xKoOteirGaHl1.jpg")
+        )
+
+        tvShows.add(
+            TvShowEntity(
+                "tv8",
+                "Stranger Things",
+                "Mystery,Sci-Fi&Fantasy,Drama",
+                "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.",
+                "8",
+                "3",
+                "https://image.tmdb.org/t/p/w600_and_h900_bestv2/x2LSRK2Cm7MZhjluni1msVJ3wDF.jpg")
+        )
+
+        tvShows.add(
+            TvShowEntity(
+                "tv9",
+                "Naruto",
+                "Animation,Comedy,Action,Drama",
+                "In another world, ninja are the ultimate power, and in the Village Hidden in the Leaves live the stealthiest ninja in the land. Twelve years earlier, the fearsome Nine-Tailed Fox terrorized the village and claimed many lives before it was subdued and its spirit sealed within the body of a baby boy. That boy, Naruto Uzumaki, has grown up to become a ninja-in-training who's more interested in pranks than in studying ninjutsu.. but Naruto is determined to become the greatest ninja ever!",
+                "62",
+                "4",
+                "https://image.tmdb.org/t/p/w600_and_h900_bestv2/vauCEnR7CiyBDzRCeElKkCaXIYu.jpg")
+        )
+
+        tvShows.add(
+            TvShowEntity(
+                "tv10",
+                "Naruto Shippuden",
+                "Animation,Comedy,Drama",
+                "Naruto Shippuuden is the continuation of the original animated TV series Naruto.The story revolves around an older and slightly more matured Uzumaki Naruto and his quest to save his friend Uchiha Sasuke from the grips of the snake-like Shinobi, Orochimaru. After 2 and a half years Naruto finally returns to his village of Konoha, and sets about putting his ambitions to work, though it will not be easy, as He has amassed a few (more dangerous) enemies, in the likes of the shinobi organization; Akatsuki.",
+                "87",
+                "1",
+                "https://image.tmdb.org/t/p/w600_and_h900_bestv2/zAYRe2bJxpWTVrwwmBc00VFkAf4.jpg")
+        )
+
+        return tvShows
     }
 }
