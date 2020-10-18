@@ -25,9 +25,9 @@ class TvShowAdapter: RecyclerView.Adapter<TvShowAdapter.TvShowViewHolder>() {
         listTvShow.addAll(tvShows)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TvShowAdapter.TvShowViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TvShowViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.items_tv_shows, parent, false)
-        return TvShowAdapter.TvShowViewHolder(view)
+        return TvShowViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: TvShowViewHolder, position: Int) {

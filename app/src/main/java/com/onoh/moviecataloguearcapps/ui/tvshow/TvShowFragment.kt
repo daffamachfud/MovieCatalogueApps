@@ -7,11 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-
 import com.onoh.moviecataloguearcapps.R
-import com.onoh.moviecataloguearcapps.ui.movie.MovieAdapter
-import com.onoh.moviecataloguearcapps.ui.movie.MovieViewModel
-import kotlinx.android.synthetic.main.fragment_movie.*
 import kotlinx.android.synthetic.main.fragment_tv_show.*
 
 /**

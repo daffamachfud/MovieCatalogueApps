@@ -14,6 +14,7 @@
     <string name="number_episodes">%s Episodes</string>
     <string name="season">season</string>
     <string name="last_season">Last Season:%s</string>
+    <string name="description">description</string>
 
 
 </resources>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:id="@+id/tv_title_tv_show_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/colorText"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_season_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/season"
+            android:textSize="16sp"
+            android:drawableStart="@drawable/ic_circle_white"
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/colorText"/>
+
+        <TextView
+            android:id="@+id/tv_episodes_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/episodes"
+            android:textSize="16sp"
+            android:drawableStart="@drawable/ic_circle_white"
+            android:textColor="@color/colorText"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_category_tv_show_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/category"
+        android:textSize="12sp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textStyle="italic"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/colorText"/>
+
+
+
+    <TextView
+        android:id="@+id/tv_desc_tv_show_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/description"
+        android:textSize="14sp"
+        android:layout_margin="16dp"
+        android:textColor="@color/colorText"/>
+
+</LinearLayout>
