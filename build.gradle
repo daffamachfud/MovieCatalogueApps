@@ -38,6 +38,9 @@ ext {
     androidXTestVersion = '1.2.0'
 
     archLifecycleVersion = '2.1.0'
+    retrofitVersion = '2.8.1'
+    retrofitGsonVersion ='2.5.0'
+    okhttpVersion ='3.12.0'
 
     materialVersion = '1.2.1'
     recyclerViewVersion = '1.1.0'

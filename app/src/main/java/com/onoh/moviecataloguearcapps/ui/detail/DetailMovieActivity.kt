@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.onoh.moviecataloguearcapps.R
-import com.onoh.moviecataloguearcapps.data.MovieEntity
+import com.onoh.moviecataloguearcapps.data.local.MovieEntity
 import kotlinx.android.synthetic.main.activity_detail_movie.*
 import kotlinx.android.synthetic.main.content_detail_movies.*
 
@@ -26,8 +26,8 @@ class DetailMovieActivity : AppCompatActivity() {
         val viewModel = ViewModelProvider(this,ViewModelProvider.NewInstanceFactory())[DetailViewModel::class.java]
         val extras = intent.extras
         if(extras != null){
-            val movieId = extras.getString(EXTRA_MOVIE)
-            if(movieId!= null){
+            val movieId = extras.getInt(EXTRA_MOVIE)
+            if(movieId!= 0){
                 viewModel.setSelectedMovie(movieId)
                 setupDetail(viewModel.getMovie())
             }
@@ -44,8 +44,8 @@ class DetailMovieActivity : AppCompatActivity() {
 
         tv_title_movie_detail.text = movie.title
         tv_date_movie_detail.text = movie.dateRelease
-        tv_category_movie_detail.text = movie.category
-        tv_desc_movie_detail.text = movie.description
+        tv_category_movie_detail.text = movie.overview
+        tv_desc_movie_detail.text = movie.overview
     }
 
     override fun onSupportNavigateUp(): Boolean {

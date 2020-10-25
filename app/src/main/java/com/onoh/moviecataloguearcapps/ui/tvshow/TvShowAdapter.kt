@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.onoh.moviecataloguearcapps.R
-import com.onoh.moviecataloguearcapps.data.TvShowEntity
+import com.onoh.moviecataloguearcapps.data.local.TvShowEntity
 import com.onoh.moviecataloguearcapps.ui.detail.DetailTvShowActivity
 import kotlinx.android.synthetic.main.items_movies.view.img_poster
 import kotlinx.android.synthetic.main.items_movies.view.tv_item_title
@@ -52,7 +52,7 @@ class TvShowAdapter: RecyclerView.Adapter<TvShowAdapter.TvShowViewHolder>() {
                     context.startActivity(intent)
                 }
                 Glide.with(context)
-                    .load(tvShow.posterImage)
+                    .load("https://image.tmdb.org/t/p/w500/"+tvShow.posterImage)
                     .apply(
                         RequestOptions.placeholderOf(R.drawable.ic_error)
                             .error(R.drawable.ic_error))

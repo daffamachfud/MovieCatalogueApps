@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.onoh.moviecataloguearcapps.R
-import com.onoh.moviecataloguearcapps.data.TvShowEntity
+import com.onoh.moviecataloguearcapps.data.local.TvShowEntity
 import kotlinx.android.synthetic.main.activity_detail_movie.toolbar_detail
 import kotlinx.android.synthetic.main.activity_detail_tv_show.*
 import kotlinx.android.synthetic.main.content_detail_tv_show.*
@@ -27,8 +27,8 @@ class DetailTvShowActivity : AppCompatActivity() {
         val viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[DetailViewModel::class.java]
         val extras = intent.extras
         if(extras != null){
-            val tvShowId = extras.getString(EXTRA_TV_SHOW)
-            if(tvShowId!= null){
+            val tvShowId = extras.getInt(EXTRA_TV_SHOW)
+            if(tvShowId!= 0){
                 viewModel.setSelectedtvShow(tvShowId)
                 setUpDetail(viewModel.getTvShow())
             }
@@ -46,7 +46,7 @@ class DetailTvShowActivity : AppCompatActivity() {
         tv_title_tv_show_detail.text = tvShow.title
         tv_episodes_detail.text = resources.getString(R.string.number_episodes,tvShow.episodes)
         tv_season_detail.text = resources.getString(R.string.last_season,tvShow.season)
-        tv_category_tv_show_detail.text = tvShow.category
+        tv_category_tv_show_detail.text = tvShow.episodes
         tv_desc_tv_show_detail.text = tvShow.description
     }
 

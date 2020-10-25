@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.onoh.moviecataloguearcapps.R
-import com.onoh.moviecataloguearcapps.data.MovieEntity
+import com.onoh.moviecataloguearcapps.data.local.MovieEntity
 import com.onoh.moviecataloguearcapps.ui.detail.DetailMovieActivity
 import kotlinx.android.synthetic.main.items_movies.view.*
 import java.util.ArrayList
@@ -41,7 +41,7 @@ class MovieAdapter: RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
         fun bind(movie: MovieEntity) {
             with(itemView) {
                 tv_item_title.text = movie.title
-                tv_item_category.text = movie.category
+                tv_item_category.text = movie.rating.toString()
                 tv_item_date_release.text = resources.getString(R.string.release_date,movie.dateRelease)
                 setOnClickListener {
                     val intent = Intent(context, DetailMovieActivity::class.java).apply {
@@ -50,7 +50,7 @@ class MovieAdapter: RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
                     context.startActivity(intent)
                 }
                 Glide.with(context)
-                    .load(movie.posterImage)
+                    .load("https://image.tmdb.org/t/p/w500/"+movie.posterImage)
                     .apply(
                         RequestOptions.placeholderOf(R.drawable.ic_error)
                             .error(R.drawable.ic_error))
