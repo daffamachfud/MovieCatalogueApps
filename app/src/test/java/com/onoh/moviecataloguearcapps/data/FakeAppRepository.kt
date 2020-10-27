@@ -1,29 +1,18 @@
 package com.onoh.moviecataloguearcapps.data
 
-import android.content.Context
-import android.util.Log
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
 import com.onoh.moviecataloguearcapps.data.local.MovieEntity
 import com.onoh.moviecataloguearcapps.data.local.TvShowEntity
 import com.onoh.moviecataloguearcapps.data.remote.RemoteDataSource
-import com.onoh.moviecataloguearcapps.data.remote.response.*
+import com.onoh.moviecataloguearcapps.data.remote.response.DetailMvResponse
+import com.onoh.moviecataloguearcapps.data.remote.response.DetailTvShowResponse
+import com.onoh.moviecataloguearcapps.data.remote.response.MoviesResult
+import com.onoh.moviecataloguearcapps.data.remote.response.TvShowsResult
 
-class AppRepository private constructor(private val remoteDataSource: RemoteDataSource) : AppDataSource {
-
-    companion object{
-        @Volatile
-        private var instance:AppRepository?=null
-        fun getInstance(remoteDataSource: RemoteDataSource):AppRepository =
-            instance?: synchronized(this){
-                instance?: AppRepository(remoteDataSource)
-            }
-    }
-
+class FakeAppRepository(private val remoteDataSource: RemoteDataSource) : AppDataSource  {
     override fun getAllMovies(): LiveData<List<MovieEntity>> {
-       val movieResults = MutableLiveData<List<MovieEntity>>()
+        val movieResults = MutableLiveData<List<MovieEntity>>()
         remoteDataSource.getAllMovies(object :RemoteDataSource.LoadMovieCallback{
             override fun onAllMoviesReceived(movieResult: List<MoviesResult?>?) {
                 val movieList = ArrayList<MovieEntity>()
@@ -42,7 +31,6 @@ class AppRepository private constructor(private val remoteDataSource: RemoteData
     }
 
     override fun getDetailMovie(movieId: Int): LiveData<MovieEntity> {
-        Log.d("onResponseDetail",movieId.toString())
         val movieResult = MutableLiveData<MovieEntity>()
         remoteDataSource.getDetailMovie(movieId,object:RemoteDataSource.LoadDetailMovieCallback{
             override fun onDetailMovieReceived(detailMvResult: DetailMvResponse?) {

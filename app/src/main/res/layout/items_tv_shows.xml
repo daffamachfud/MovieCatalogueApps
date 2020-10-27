@@ -32,12 +32,13 @@
             tools:ignore="ContentDescription" />
 
         <TextView
-            android:id="@+id/tv_item_title"
+            android:id="@+id/tv_item_title_tv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:maxLines="2"
             android:ellipsize="end"
             android:gravity="start"
             android:textColor="@color/colorText"
@@ -48,35 +49,22 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@string/title" />
 
-        <TextView
-            android:id="@+id/tv_item_season"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:gravity="start"
-            android:textColor="@color/colorText"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/tv_item_title"
-            app:layout_constraintStart_toStartOf="@+id/tv_item_title"
-            app:layout_constraintTop_toBottomOf="@+id/tv_item_title"
-            tools:text="@string/season" />
 
         <TextView
-            android:id="@+id/tv_item_episodes"
+            android:id="@+id/tv_item_rating_tv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:ellipsize="end"
-            android:gravity="start"
+            android:gravity="center_vertical"
             android:maxLines="1"
+            android:drawableStart="@drawable/ic_star_black_24dp"
             android:textColor="@color/colorText"
             android:textSize="12sp"
             android:textStyle="italic"
-            app:layout_constraintEnd_toEndOf="@+id/tv_item_season"
-            app:layout_constraintStart_toStartOf="@+id/tv_item_season"
-            app:layout_constraintTop_toBottomOf="@+id/tv_item_season"
-            tools:text="@string/episodes" />
+            app:layout_constraintEnd_toEndOf="@+id/tv_item_title_tv"
+            app:layout_constraintStart_toStartOf="@+id/tv_item_title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_title_tv" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

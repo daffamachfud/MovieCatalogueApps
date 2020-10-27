@@ -41,7 +41,7 @@ class MovieAdapter: RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
         fun bind(movie: MovieEntity) {
             with(itemView) {
                 tv_item_title.text = movie.title
-                tv_item_category.text = movie.rating.toString()
+                tv_item_rating_film.text = movie.rating.toString()
                 tv_item_date_release.text = resources.getString(R.string.release_date,movie.dateRelease)
                 setOnClickListener {
                     val intent = Intent(context, DetailMovieActivity::class.java).apply {

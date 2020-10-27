@@ -5,7 +5,7 @@ data class TvShowEntity(
     var title:String?,
     var rating: Double?,
     var description:String?,
-    var episodes:String?,
-    var season:String?,
+    var episodes:Int?,
+    var season:Int?,
     var posterImage:String?
 )

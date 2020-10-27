@@ -18,14 +18,8 @@ import kotlinx.android.synthetic.main.fragment_movie.*
 import kotlinx.android.synthetic.main.fragment_tv_show.*
 import kotlinx.android.synthetic.main.fragment_tv_show.progress_bar
 
-/**
- * A simple [Fragment] subclass.
- */
-class TvShowFragment : Fragment() {
 
-    companion object{
-        const val API_KEY = BuildConfig.API_KEY
-    }
+class TvShowFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,9 +36,9 @@ class TvShowFragment : Fragment() {
             val viewModel = ViewModelProvider(this,factory)[TvshowViewModel::class.java]
             val tvShowAdapter = TvShowAdapter()
 
-            viewModel.setApiKey(MoviesFragment.API_KEY)
+
             progress_bar.visibility = View.VISIBLE
-            viewModel.getTvShows().observe(viewLifecycleOwner, Observer {
+            viewModel.getTvShows().observe(viewLifecycleOwner, {
                 progress_bar.visibility = View.GONE
                 tvShowAdapter.setTvShow(it)
                 tvShowAdapter.notifyDataSetChanged()

@@ -8,10 +8,5 @@ import com.onoh.moviecataloguearcapps.data.AppRepository
 import com.onoh.moviecataloguearcapps.data.local.MovieEntity
 
 class MovieViewModel(private val appRepository: AppRepository) : ViewModel() {
-    private lateinit var apiKey:String
-
-    fun setApiKey(apiKey:String){
-        this.apiKey = apiKey
-    }
-    fun getMovies():LiveData<List<MovieEntity>> = appRepository.getAllMovies(apiKey)
+    fun getMovies():LiveData<List<MovieEntity>> = appRepository.getAllMovies()
 }

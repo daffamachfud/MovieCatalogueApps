@@ -36,6 +36,10 @@ ext {
     junitVersion = '4.12'
     espressoVersion = '3.1.0'
     androidXTestVersion = '1.2.0'
+    mockitoVersion = '2.23.4'
+    mockitoKotlinVersion = '2.1.0'
+    idleResourceVersion = '3.3.0'
+
 
     archLifecycleVersion = '2.1.0'
     retrofitVersion = '2.8.1'
@@ -47,4 +51,5 @@ ext {
     glideVersion = '4.11.0'
     lifeCycleVersion = '2.2.0'
     archVersion = '2.2.0'
+
 }

@@ -2,19 +2,24 @@ package com.onoh.moviecataloguearcapps.ui.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.onoh.moviecataloguearcapps.R
 import com.onoh.moviecataloguearcapps.data.local.TvShowEntity
+import com.onoh.moviecataloguearcapps.vo.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_detail_movie.toolbar_detail
 import kotlinx.android.synthetic.main.activity_detail_tv_show.*
-import kotlinx.android.synthetic.main.content_detail_tv_show.*
+import kotlinx.android.synthetic.main.activity_detail_tv_show.btn_close_detail
+import kotlinx.android.synthetic.main.activity_detail_tv_show.progressBar
 
 class DetailTvShowActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_TV_SHOW = "extra_tv_show"
+        const val IMAGE_URL = "https://image.tmdb.org/t/p/w500/"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,36 +27,34 @@ class DetailTvShowActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detail_tv_show)
         setSupportActionBar(toolbar_detail)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[DetailViewModel::class.java]
+        btn_close_detail.setOnClickListener{finish()}
+        val factory = ViewModelFactory.getInstance()
+        val viewModel = ViewModelProvider(this,factory)[DetailViewModel::class.java]
         val extras = intent.extras
         if(extras != null){
             val tvShowId = extras.getInt(EXTRA_TV_SHOW)
             if(tvShowId!= 0){
+                progressBar.visibility = View.VISIBLE
                 viewModel.setSelectedtvShow(tvShowId)
-                setUpDetail(viewModel.getTvShow())
+                setUpDetail(viewModel.getDetailTvshow())
             }
         }
     }
 
-    private fun setUpDetail(tvShow: TvShowEntity) {
-        Glide.with(this)
-            .load(tvShow.posterImage)
-            .apply(
-                RequestOptions.placeholderOf(R.drawable.ic_loading)
-                    .error(R.drawable.ic_error))
-            .into(img_detail_tvshow)
+    private fun setUpDetail(tvShow: LiveData<TvShowEntity>) {
+        tvShow.observe(this, {
+            Glide.with(this)
+                .load(IMAGE_URL+it.posterImage)
+                .apply(
+                    RequestOptions.placeholderOf(R.drawable.ic_loading)
+                        .error(R.drawable.ic_error))
+                .into(img_detail_tvshow)
 
-        tv_title_tv_show_detail.text = tvShow.title
-        tv_episodes_detail.text = resources.getString(R.string.number_episodes,tvShow.episodes)
-        tv_season_detail.text = resources.getString(R.string.last_season,tvShow.season)
-        tv_category_tv_show_detail.text = tvShow.episodes
-        tv_desc_tv_show_detail.text = tvShow.description
+            tv_detail_tv_title.text = it.title
+            tv_detail_tv_overview.text = it.description
+            progressBar.visibility = View.GONE
+        })
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
-    }
 }

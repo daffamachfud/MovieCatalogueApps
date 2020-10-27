@@ -14,6 +14,11 @@
         <item name="android:editTextColor">@android:color/white</item>
     </style>
 
+    <style name="TransparentToolbar" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="colorControlNormal">@color/colorAccent</item>
+    </style>
+
     <style name="DetailToolbar" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:windowTranslucentStatus">true</item>
         <item name="colorControlNormal">@color/colorAccent</item>

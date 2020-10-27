@@ -42,9 +42,8 @@ class TvShowAdapter: RecyclerView.Adapter<TvShowAdapter.TvShowViewHolder>() {
 
         fun bind(tvShow: TvShowEntity) {
             with(itemView) {
-                tv_item_title.text = tvShow.title
-                tv_item_season.text = resources.getString(R.string.last_season,tvShow.season)
-                tv_item_episodes.text = resources.getString(R.string.number_episodes,tvShow.episodes)
+                tv_item_title_tv.text = tvShow.title
+                tv_item_rating_tv.text = tvShow.rating.toString()
                 setOnClickListener {
                     val intent = Intent(context, DetailTvShowActivity::class.java).apply {
                         putExtra(DetailTvShowActivity.EXTRA_TV_SHOW, tvShow.tvShowId)

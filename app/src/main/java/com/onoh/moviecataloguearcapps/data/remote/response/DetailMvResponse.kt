@@ -50,7 +50,7 @@ data class DetailMvResponse(
 	val runtime: Int? = null,
 
 	@field:SerializedName("poster_path")
-	val posterPath: Any? = null,
+	val posterPath: String? = null,
 
 	@field:SerializedName("spoken_languages")
 	val spokenLanguages: List<SpokenLanguagesItem?>? = null,
