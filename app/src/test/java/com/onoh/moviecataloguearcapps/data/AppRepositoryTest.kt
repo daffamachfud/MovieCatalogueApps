@@ -9,7 +9,6 @@ import org.junit.Test
 import org.mockito.Mockito.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.doAnswer
-import com.nhaarman.mockitokotlin2.eq
 import org.junit.Rule
 import org.junit.Assert.*
 
@@ -21,11 +20,8 @@ class AppRepositoryTest {
 
     private val remote = mock(RemoteDataSource::class.java)
     private val appRepository = FakeAppRepository(remote)
-
     private val movieResponse = DataDummy.generateDummyMoviesResponse()
-    private val movieId = movieResponse[0].id
     private val tvResponse = DataDummy.generateDummyTvShowsResponse()
-    private val tvId = tvResponse[0].id
 
     @Test
     fun getAllMovies() {
@@ -41,10 +37,6 @@ class AppRepositoryTest {
     }
 
     @Test
-    fun getDetailMovie() {
-    }
-
-    @Test
     fun getAllTvshows() {
         doAnswer { invocation ->
             (invocation.arguments[0] as RemoteDataSource.LoadTvCallback)
@@ -57,7 +49,4 @@ class AppRepositoryTest {
         assertEquals(tvResponse.size.toLong(), tvEntities.size.toLong())
     }
 
-    @Test
-    fun getDetailTvshow() {
-    }
 }

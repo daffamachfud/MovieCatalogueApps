@@ -3,7 +3,7 @@ package com.onoh.moviecataloguearcapps.ui.home
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.IdlingRegistry
-import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.rule.ActivityTestRule
@@ -20,8 +20,8 @@ import org.junit.Test
 
 class HomeActivityTest {
 
-    private val dummyMovie = DataDummy.generateDummyMovies()
-    private val dummyTvShow = DataDummy.generateDummyTvShows()
+    private val dummyMovie = DataDummy.generateDummyMoviesResponse()
+    private val dummyTvShow = DataDummy.generateDummyTvShowsResponse()
 
     @get:Rule
     val activityRule = ActivityTestRule(HomeActivity::class.java)
@@ -45,6 +45,7 @@ class HomeActivityTest {
    @Test
    fun loadMoviesDetail(){
        onView(withId(R.id.rv_movies)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
+       onView(withId(R.id.nested_scrollview_detail_mv)).perform(swipeUp())
        onView(withId(R.id.tv_detail_movie_title)).check(matches(isDisplayed()))
        onView(withId(R.id.tv_detail_movie_title)).check(matches(withText(dummyMovie[0].title)))
        onView(withId(R.id.tv_detail_movie_overview)).check(matches(isDisplayed()))
@@ -62,9 +63,10 @@ class HomeActivityTest {
     fun loadTvShowDetail(){
         onView(withText("TV SHOWS")).perform(click())
         onView(withId(R.id.rv_tv_show)).perform(RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click()))
+        onView(withId(R.id.nested_scrollview_detail_tv)).perform(swipeUp())
         onView(withId(R.id.tv_detail_tv_title)).check(matches(isDisplayed()))
-        onView(withId(R.id.tv_detail_tv_title)).check(matches(withText(dummyTvShow[0].title)))
+        onView(withId(R.id.tv_detail_tv_title)).check(matches(withText(dummyTvShow[0].originalName)))
         onView(withId(R.id.tv_detail_tv_overview)).check(matches(isDisplayed()))
-        onView(withId(R.id.tv_detail_tv_overview)).check(matches(withText(dummyTvShow[0].description)))
+        onView(withId(R.id.tv_detail_tv_overview)).check(matches(withText(dummyTvShow[0].overview)))
     }
 }

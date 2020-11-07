@@ -4,13 +4,11 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.nhaarman.mockitokotlin2.verify
-import com.onoh.moviecataloguearcapps.BuildConfig
 import com.onoh.moviecataloguearcapps.data.AppRepository
-import com.onoh.moviecataloguearcapps.data.local.MovieEntity
+import com.onoh.moviecataloguearcapps.data.local.entity.MovieEntity
 import com.onoh.moviecataloguearcapps.utils.DataDummy
 import org.junit.Before
 import org.junit.Test
-
 import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.runner.RunWith

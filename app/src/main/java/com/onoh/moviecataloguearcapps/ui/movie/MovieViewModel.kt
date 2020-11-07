@@ -1,12 +1,11 @@
 package com.onoh.moviecataloguearcapps.ui.movie
 
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.onoh.moviecataloguearcapps.BuildConfig
 import com.onoh.moviecataloguearcapps.data.AppRepository
-import com.onoh.moviecataloguearcapps.data.local.MovieEntity
+import com.onoh.moviecataloguearcapps.data.local.entity.MovieEntity
+import com.onoh.moviecataloguearcapps.vo.Resource
 
 class MovieViewModel(private val appRepository: AppRepository) : ViewModel() {
-    fun getMovies():LiveData<List<MovieEntity>> = appRepository.getAllMovies()
+    fun getMovies():LiveData<Resource<List<MovieEntity>>> = appRepository.getAllMovies()
 }

@@ -2,8 +2,8 @@ package com.onoh.moviecataloguearcapps.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.onoh.moviecataloguearcapps.data.local.MovieEntity
-import com.onoh.moviecataloguearcapps.data.local.TvShowEntity
+import com.onoh.moviecataloguearcapps.data.local.entity.MovieEntity
+import com.onoh.moviecataloguearcapps.data.local.entity.TvShowEntity
 import com.onoh.moviecataloguearcapps.data.remote.RemoteDataSource
 import com.onoh.moviecataloguearcapps.data.remote.response.DetailMvResponse
 import com.onoh.moviecataloguearcapps.data.remote.response.DetailTvShowResponse

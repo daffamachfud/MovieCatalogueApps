@@ -5,9 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.nhaarman.mockitokotlin2.verify
 import com.onoh.moviecataloguearcapps.data.AppRepository
-import com.onoh.moviecataloguearcapps.data.local.MovieEntity
-import com.onoh.moviecataloguearcapps.data.local.TvShowEntity
-import com.onoh.moviecataloguearcapps.ui.movie.MovieViewModel
+import com.onoh.moviecataloguearcapps.data.local.entity.TvShowEntity
 import com.onoh.moviecataloguearcapps.utils.DataDummy
 import org.junit.Assert
 import org.junit.Before

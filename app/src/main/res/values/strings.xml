@@ -16,6 +16,7 @@
     <string name="last_season">Last Season:%s</string>
     <string name="description">description</string>
     <string name="overview">Overview :</string>
+    <string name="favorite">favorite</string>
 
 
 </resources>

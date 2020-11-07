@@ -4,8 +4,8 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.onoh.moviecataloguearcapps.data.AppRepository
-import com.onoh.moviecataloguearcapps.data.local.MovieEntity
-import com.onoh.moviecataloguearcapps.data.local.TvShowEntity
+import com.onoh.moviecataloguearcapps.data.local.entity.MovieEntity
+import com.onoh.moviecataloguearcapps.data.local.entity.TvShowEntity
 import com.onoh.moviecataloguearcapps.utils.DataDummy
 import org.junit.Before
 import org.junit.Test

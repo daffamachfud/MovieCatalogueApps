@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.onoh.moviecataloguearcapps.R
-import com.onoh.moviecataloguearcapps.data.local.MovieEntity
+import com.onoh.moviecataloguearcapps.data.local.entity.MovieEntity
 import com.onoh.moviecataloguearcapps.ui.detail.DetailMovieActivity
 import kotlinx.android.synthetic.main.items_movies.view.*
 import java.util.ArrayList
